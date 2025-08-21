@@ -10,15 +10,18 @@ export default function HeroSection() {
       description: `At Geelex, we understand that in logistics, timing, precision, and reliability are everything. 
                     That’s why we go above and beyond to ensure your packages reach their destination safely, 
                     on time, and with unmatched efficiency.`,
+      image: 'image1.png'
     },
     {
       title: 'Delivering Excellence,Every Mile of the Way',
       description: `Whether you're managing complex supply chains or simple deliveries, our cutting-edge technology and expert team are here to streamline your operations`,
+      image: 'image2.png'
     },
     {
       title: 'Your Trusted Partner in Seamless Logistics',
       description: `Whether you’re looking to streamline your local deliveries or expand countrywide, our tailored logistics solutions are designed to meet the demands of your 
       business, ensuring peace of mind every step of the way. Let us handle the logistics, so you can focus on what matters most—growing your business.`,
+      image: 'image3.png'
     },
   ];
 
@@ -29,7 +32,7 @@ export default function HeroSection() {
     }, 5000);
 
     return () => clearInterval(slideInterval); // Clear interval when component is unmounted
-  }, []);
+  }, [slides.length]);
 
   // Function to change slide manually
   const changeSlide = (index) => {
@@ -57,11 +60,12 @@ export default function HeroSection() {
             left: 0,
             width: '100%',
             height: '100%',
-            backgroundImage: 'url(fevicon.png)',
+            backgroundImage: `url(${slides[currentSlide].image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             opacity: 0.9, // Adjust opacity here
             zIndex: -1,
+            transition: 'background-image 1s ease-in-out'
           }}
         ></div>
 
@@ -85,6 +89,7 @@ export default function HeroSection() {
             >
               <h1>{slide.title}</h1>
               <p>{slide.description}</p>
+              <button styles= {{color:'white',backgroundColor:'rgb(67, 146, 226)', textAlign:'center', padding:5, margin:10,}}>Get A Quote</button>
             </div>
           ))}
         </div>
@@ -105,11 +110,11 @@ export default function HeroSection() {
               key={index}
               onClick={() => changeSlide(index)}
               style={{
-                width: '1',
-                height: '1',
-                //borderRadius: '50%',
+                width: '12px',
+                height: '12px',
+                borderRadius: '50%',
                 backgroundColor: currentSlide === index ? 'aqua' : 'white',
-                transform: currentSlide === index ? 'scale(1)' : 'scale(1)',
+                transform: currentSlide === index ? 'scale(1.2)' : 'scale(1)',
                 transition: 'all 0.3s ease',
                 border: 'none',
                 cursor: 'pointer',

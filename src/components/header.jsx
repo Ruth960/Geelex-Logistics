@@ -1,12 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Search, User, Truck} from "lucide-react";
 
 export default function Header() {
+  const navigate = useNavigate();
+
   return (
-    <header style={{ position: "", top: 0, zIndex: 50, marginBottom: 10, width: '100vw' }}>
-      <div style={{ width: '90vw', padding: "0 1rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
+    <header style={{ position: "", top: 0, zIndex: 50, marginBottom: 10, width: '100%' }}>
+      <div style={{ width: '90%', margin: '0 auto', padding: "0 1rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
         <div style={{ display: "flex", alignItems: "center" }}>
-        <Truck style={{ height: "24px", width: "24px", marginRight: "8px" }} />
+          <Truck style={{ height: "24px", width: "24px", marginRight: "8px" }} />
           <Link to="/" style={{ fontSize: "1.5rem", fontWeight: "bold", textDecoration: "none", color: "#000" }}>
             Geelex Logistics
           </Link>
@@ -20,11 +22,12 @@ export default function Header() {
           </nav>
           <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
             <Link to="/login" style={{ display: "flex", alignItems: "center", color: "#1f2937", fontWeight: "500", textDecoration: "none" }}>
-            <User style={{ height: "20px", width: "20px", marginRight: "4px" }} />LogIn
+              <User style={{ height: "20px", width: "20px", marginRight: "4px" }} />LogIn
             </Link>
             <button
               aria-label="Search"
               style={{ color: "#1f2937", background: "none", border: "none", cursor: "pointer" }}
+              onClick={() => navigate("/search")}
             >
               <Search style={{ height: "20px", width: "20px" }} />
             </button>

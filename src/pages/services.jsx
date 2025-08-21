@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 
-export default function Services(){
-
+export default function Services() {
     return(
         <div>
             <h1>Our Services</h1>
@@ -10,9 +10,6 @@ export default function Services(){
             display: 'flex',
             flexWrap: 'wrap', 
             justifyContent: 'space-between',
-           
-
-
            }}>
             <div style={{
                 backgroundColor:'rgb(233, 229, 241)',
@@ -31,8 +28,9 @@ export default function Services(){
                     with care and caution. Our Safe Transport services guarantee a 
                     secure journey with experienced drivers, real-time tracking, and round-the-clock customer support.
                 </p>
-                <button>Read More</button>
-
+                <Link to="/services/safety-transport">
+                    <button>Read More</button>
+                </Link>
             </div>
 
             <div style={{
@@ -54,8 +52,9 @@ export default function Services(){
                 of your shipment, you can rest assured that you're always informed about its journey, delivery progress, and
                  expected arrival time.
                 </p>
-                <button>Read More</button>
-
+                <Link to="/services/real-time-tracking">
+                    <button>Read More</button>
+                </Link>
             </div>
             <div style={{
                 backgroundColor:'rgb(233, 229, 241)',
@@ -76,8 +75,9 @@ export default function Services(){
                 systems, including 24/7 surveillance, climate control, and restricted access, ensuring that your items remain 
                 protected at all times. With our secure storage, you can trust that your goods are in good hands.
                 </p>
-                <button>Read More</button>
-
+                <Link to="/services/trucks-transport">
+                    <button>Read More</button>
+                </Link>
             </div>
             <div style={{
                 backgroundColor:'rgb(233, 229, 241)',
@@ -98,14 +98,11 @@ export default function Services(){
                 process, minimizing your risk of fines or hold-ups. Whether you're importing or exporting, our customs clearance service 
                 helps ensure a seamless, hassle-free experience from start to finish.
                 </p>
-                <button>Read More</button>
-
+                <Link to="/services/custom-clearance">
+                    <button>Read More</button>
+                </Link>
             </div>
-
-
            </div>
-            </div>
-
+        </div>
     )
-
 }

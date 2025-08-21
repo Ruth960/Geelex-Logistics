@@ -1,10 +1,10 @@
 import Header from "../components/header";
 import HeroSection from "../components/herosection";
 import Footer from "../components/footer";
- import About from "../components/about";
- import  Services from "../components/services";
- import Tracking from "../components/trackshipment";
- import Contacts from "../components/contacts";
+ import About from "./about";
+ import  Services from "./services";
+ import Tracking from "./trackshipment";
+ import Contacts from "./contacts";
 
 export default function Home(){
 
